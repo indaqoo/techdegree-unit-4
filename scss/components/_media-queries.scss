@@ -1,30 +1,29 @@
 /* ============================================= */
 /*              Media Queries                    */
 /* ============================================= */
-@media (min-width: 768px) {
 
-    .container {
-      max-width: 1400px;
-      display: block;
+@media (min-width: 768px) {
+    %test {
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .container {
+      @extend %test;
+      max-width: 1400px;
     }
     
     .centered {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      @extend %test;
     }
     
     .row {
-      flex-direction: row;
+      @include flex($dir: row);
     }
     
     [class^=col] {
-      display: flex;
-      justify-content: center;
+      @include flex($just: center, $alig: center);
       margin-top: 0;
-      align-items: center;
     }
     
     [class^=col] + [class^=col] {
@@ -80,9 +79,11 @@
     }
     
     .nav {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
+      @include flex(
+                    $dir: row, 
+                    $just: flex-end, 
+                    $alig: center
+                    );
     }
     
     .nav-link {
