@@ -360,6 +360,12 @@ template {
 .card {
   flex-basis: 100%; }
 
+p {
+  line-height: 1.45em; }
+
+a {
+  text-decoration: none; }
+
 .headline-primary {
   color: #58e1c1;
   margin-left: 10px; }
